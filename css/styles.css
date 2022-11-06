@@ -1,0 +1,221 @@
+/* Font [Rubik]-[weights: 300,400,500] */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+/* Global Variables */
+
+:root {
+  /* Main Font */
+  --font-rubik: "Rubik", sans-serif;
+
+  --blue: hsl(246, 80%, 60%);
+  /* work */
+  --light-red: hsl(15, 100%, 70%);
+  /* play */
+  --soft-blue: hsl(195, 74%, 62%);
+  /* study */
+  --pink-red: hsl(348, 100%, 68%);
+  /* exercise */
+  --lime-green: hsl(145, 58%, 55%);
+  /* social */
+  --violet: hsl(264, 64%, 52%);
+  /* self care */
+  --soft-orange: hsl(43, 84%, 65%);
+  /* page background color */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  /* card background color */
+  --dark-blue: hsl(235, 46%, 20%);
+
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+/* Global Styles */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+  font-family: var(--font-rubik);
+}
+
+.content-wrapper {
+  max-width: 85vw;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Main card Styles */
+
+.main-card {
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  background-color: var(--blue);
+  color: hsl(0, 100%, 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.user .logo {
+  width: 80px;
+}
+.user .logo img {
+  max-width: 100%;
+  border: 3px solid hsl(0, 100%, 100%);
+  border-radius: 50%;
+}
+.user .user-info p {
+  font-weight: 400;
+  color: var(--pale-blue);
+}
+.user .user-info h1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: hsl(0, 0%, 85%);
+  margin-top: 0.3rem;
+}
+.timeframes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+  font-weight: 400;
+}
+.timeframes button {
+  font-family: var(--font-rubik);
+  font-size: 1.3rem;
+  color: var(--desaturated-blue);
+  cursor: pointer;
+  transition: 0.25s;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.timeframes button:hover {
+  color: var(--pale-blue);
+}
+
+/* Cards Styles */
+.card {
+  border-radius: 1rem;
+  background-color: white;
+}
+.card .card-content {
+  padding: 2rem;
+  background-color: var(--dark-blue);
+  border-radius: 0.8rem;
+  color: hsl(0, 0%, 85%);
+  margin-top: 3rem;
+}
+.card .card-content:hover {
+  background-color: hsl(235, 46%, 25%);
+  cursor: pointer;
+}
+.card-title,
+.card-timeframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.card-title h2 {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.card-timeframe h2 {
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+.card-timeframe p {
+  color: var(--pale-blue);
+}
+
+.work {
+  background: url(../images/icon-work.svg) no-repeat top -0.3rem right 1rem var(--light-red);
+}
+.play {
+  background: url(../images/icon-play.svg) no-repeat top -0.3rem right 1rem var(--soft-blue);
+}
+.study {
+  background: url(../images/icon-study.svg) no-repeat top -0.3rem right 1rem var(--pink-red);
+}
+.exercise {
+  background: url(../images/icon-exercise.svg) no-repeat top -0.3rem right 1rem var(--lime-green);
+}
+.social {
+  background: url(../images/icon-social.svg) no-repeat top -0.3rem right 1rem var(--violet);
+}
+.self-care {
+  background: url(../images/icon-self-care.svg) no-repeat top -0.3rem right 1rem
+    var(--soft-orange);
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-wrapper {
+    margin: 3rem;
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+  .main-card {
+    grid-row: span 2;
+  }
+  .user,
+  .timeframes {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeframes {
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .card {
+    height: 230px;
+  }
+  .card .card-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem 2rem;
+    height: calc(100% - 3rem);
+  }
+  .card-timeframe {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .card-title h2 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .card-timeframe h2 {
+    font-weight: 300;
+    font-size: 3rem;
+  }
+}
